@@ -1,1 +1,87 @@
-rm 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Profiling System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Employee Profiling System</h1>
+    <button id="addEmployeeBtn">+ Add Employee</button>
+  </header>
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Search employee..."
+  >
+  <main>
+    <table id="employeeTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Department</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Employees will appear here -->
+      </tbody>
+    </table>
+  </main>
+  <!--Add Employee Modal-->
+  <div id="employeeModal" class="modal hidden">
+    <div class="modal_content">
+      <h2>Add Employee</h2>
+      <form id="employeeForm">
+        <label>
+          Name
+          <input type="text" id="name" required>
+        </label>
+        <label>
+          Age
+          <input type="number" id="age" required>
+        </label>
+        <label>
+          Position
+          <input type="text" id="position" required>
+        </label>
+        <label>
+          Department
+          <input type="text" id="department" required>
+        </label>
+        <label>
+          Date Hired
+          <input type="text" id="dateHired" required>
+        </label>
+
+        <div class="actions">
+          <button type="submit">Save</button>
+          <button type="button" id="cancelBtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--Employee Profile View-->
+  <div id="profileView" class="modal hidden">
+    <div class="modal_content">
+      <h2>Employee Profile</h2>
+
+      <p><strong>Name:</strong> <span id="pName"></span></p>
+      <p><strong>Age:</strong> <span id="pAge"></spam></p>
+      <p><strong>Position:</strong> <span id="pPosition"></span></p>
+      <p><strong>Department:</strong> <span id="pDepartment"></span></p>
+      <p><strong>Date Hired:</strong> <span id="pDateHired"></span></p>
+
+      <div class="actions">
+        <button id="editBtn">Edit</button>
+        <button id="deleteBtn">Delete</button>
+        <button id="backBtn">Back</button>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
